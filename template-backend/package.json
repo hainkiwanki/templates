@@ -1,0 +1,45 @@
+{
+    "name": "@templates/backend",
+    "description": "Template for backend applications with bare minimum linting",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "author": "hainkiwanki",
+    "license": "MIT",
+    "packageManager": "yarn@4.9.1",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "scripts": {
+        "dev": "tsx watch src/index.mts",
+        "build": "tsc -p tsconfig.json",
+        "start": "node dist/index.js",
+        "lint": "eslint . --ext .ts,.mts --max-warnings=0",
+        "lint:fix": "eslint . --ext .ts,.mts --fix",
+        "format": "prettier --write .",
+        "stylelint": "stylelint \"**/*.{scss,css,vue}\"",
+        "stylefix": "stylelint \"**/*.{scss,css,vue}\" --fix"
+    },
+    "dependencies": {
+        "fastify": "^5.6.1"
+    },
+    "devDependencies": {
+        "@types/node": "^24.8.0",
+        "@typescript-eslint/eslint-plugin": "^8.46.1",
+        "@typescript-eslint/parser": "^8.46.1",
+        "eslint": "^9.37.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.4",
+        "postcss-html": "^1.8.0",
+        "prettier": "^3.6.2",
+        "stylelint": "^16.25.0",
+        "stylelint-config-prettier": "^9.0.5",
+        "stylelint-config-standard": "^39.0.1",
+        "stylelint-order": "^7.0.0",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.3"
+    },
+    "files": [
+        "src"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "@templates/monorepo",
+    "description": "Template for monorepo applications with bare minimum linting",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "author": "hainkiwanki",
+    "license": "MIT",
+    "packageManager": "yarn@4.9.1",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "scripts": {
+        "build": "yarn workspaces foreach -pt run build",
+        "clean": "yarn workspaces foreach -pt run clean",
+        "lint": "eslint packages --ext .ts,.mts,.vue --max-warnings=0",
+        "lint:fix": "eslint packages --ext .ts,.mts,.vue --fix",
+        "format": "prettier --write .",
+        "stylelint": "stylelint \"**/*.{vue,scss,css}\"",
+        "stylefix": "stylelint \"**/*.{vue,scss,css}\" --fix"
+    },
+    "devDependencies": {
+        "eslint": "^9.37.0",
+        "prettier": "^3.6.2",
+        "stylelint": "^16.25.0",
+        "typescript": "^5.9.3"
+    }
+}

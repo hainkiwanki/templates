@@ -1,0 +1,27 @@
+{
+    "name": "@monorepo/shared",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "author": "hainkiwanki",
+    "license": "MIT",
+    "packageManager": "yarn@4.9.1",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "clean": "rimraf dist || rm -rf dist"
+    },
+    "files": [
+        "dist"
+    ]
+}

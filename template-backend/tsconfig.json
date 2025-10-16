@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "outDir": "dist",
+        "rootDir": "src",
+        "strict": true,
+        "noEmitOnError": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "typeRoots": ["./types/"],
+        "lib": ["ESNext"]
+    },
+    "include": ["src/**/*.mts"]
+}
