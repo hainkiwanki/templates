@@ -394,6 +394,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource/inter@npm:5.2.8"
+  checksum: 10c0/f737dd50005e4809887ba55ae0c9b7174216d6d14875d17a4fbb9a0ad75dec4265928b805a43fe16a23f14a878f1974a398bbfc84ad65c79fc4d4b9c3ea154e1
+  languageName: node
+  linkType: hard
+
+"@fontsource/noto-sans@npm:^5.2.10":
+  version: 5.2.10
+  resolution: "@fontsource/noto-sans@npm:5.2.10"
+  checksum: 10c0/1b8405b8ace4703a86e018f5e139c4f48292dfc3d0d912c098c24d02653dfeb72d1659b20c92bda3461d42a2fb102e40a4505742d3f8622373789131c0b3d276
+  languageName: node
+  linkType: hard
+
+"@fontsource/roboto@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource/roboto@npm:5.2.8"
+  checksum: 10c0/b215a7e08d65063e9e1714e39c023f0a1f2d33f0d48f06edf4e0d09a8945f682dd39ca7089efb83a48ceffa20d92d65392297831198e9a694b5be8a96b1a40cd
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -845,6 +866,43 @@ __metadata:
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
+
+"@templates/frontend@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@templates/frontend@workspace:."
+  dependencies:
+    "@fontsource/inter": "npm:^5.2.8"
+    "@fontsource/noto-sans": "npm:^5.2.10"
+    "@fontsource/roboto": "npm:^5.2.8"
+    "@mdi/font": "npm:^7.4.47"
+    "@types/node": "npm:^24.6.0"
+    "@typescript-eslint/eslint-plugin": "npm:^8.46.1"
+    "@typescript-eslint/parser": "npm:^8.46.1"
+    "@vitejs/plugin-vue": "npm:^6.0.1"
+    "@vue/tsconfig": "npm:^0.8.1"
+    eslint: "npm:^9.37.0"
+    eslint-config-prettier: "npm:^10.1.8"
+    eslint-plugin-prettier: "npm:^5.5.4"
+    eslint-plugin-vue: "npm:^10.5.1"
+    postcss-html: "npm:^1.8.0"
+    prettier: "npm:^3.6.2"
+    sass: "npm:^1.93.2"
+    stylelint: "npm:^16.25.0"
+    stylelint-config-prettier: "npm:^9.0.5"
+    stylelint-config-recommended-vue: "npm:^1.6.1"
+    stylelint-config-standard-scss: "npm:^16.0.0"
+    stylelint-order: "npm:^7.0.0"
+    stylelint-scss: "npm:^6.12.1"
+    typescript: "npm:^5.9.3"
+    vite: "npm:^7.1.10"
+    vite-plugin-vuetify: "npm:^2.1.2"
+    vue: "npm:^3.5.22"
+    vue-eslint-parser: "npm:^10.2.0"
+    vue-router: "npm:^4.6.3"
+    vue-tsc: "npm:^3.1.0"
+    vuetify: "npm:^3.10.5"
+  languageName: unknown
+  linkType: soft
 
 "@types/estree@npm:1.0.8, @types/estree@npm:^1.0.6":
   version: 1.0.8
@@ -3625,39 +3683,6 @@ __metadata:
   checksum: 10c0/0dad0596a61586180981133b20c32cfd93c5863c5b7140d646714e6ea8ec84583b879e5dc3928a4d683be6e6109ad7ea3de1cf71986d5194f81b3a016c8858c9
   languageName: node
   linkType: hard
-
-"template-frontend@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "template-frontend@workspace:."
-  dependencies:
-    "@mdi/font": "npm:^7.4.47"
-    "@types/node": "npm:^24.6.0"
-    "@typescript-eslint/eslint-plugin": "npm:^8.46.1"
-    "@typescript-eslint/parser": "npm:^8.46.1"
-    "@vitejs/plugin-vue": "npm:^6.0.1"
-    "@vue/tsconfig": "npm:^0.8.1"
-    eslint: "npm:^9.37.0"
-    eslint-config-prettier: "npm:^10.1.8"
-    eslint-plugin-prettier: "npm:^5.5.4"
-    eslint-plugin-vue: "npm:^10.5.1"
-    postcss-html: "npm:^1.8.0"
-    prettier: "npm:^3.6.2"
-    sass: "npm:^1.93.2"
-    stylelint: "npm:^16.25.0"
-    stylelint-config-prettier: "npm:^9.0.5"
-    stylelint-config-recommended-vue: "npm:^1.6.1"
-    stylelint-config-standard-scss: "npm:^16.0.0"
-    stylelint-order: "npm:^7.0.0"
-    typescript: "npm:^5.9.3"
-    vite: "npm:^7.1.10"
-    vite-plugin-vuetify: "npm:^2.1.2"
-    vue: "npm:^3.5.22"
-    vue-eslint-parser: "npm:^10.2.0"
-    vue-router: "npm:^4.6.3"
-    vue-tsc: "npm:^3.1.0"
-    vuetify: "npm:^3.10.5"
-  languageName: unknown
-  linkType: soft
 
 "tinyglobby@npm:^0.2.12, tinyglobby@npm:^0.2.15":
   version: 0.2.15

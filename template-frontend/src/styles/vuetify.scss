@@ -1,0 +1,7 @@
+@use 'vuetify/styles' with (
+    $body-font-family: 'Noto Sans'
+);
+
+body {
+    font-family: 'Noto Sans', sans-serif !important;
+}
