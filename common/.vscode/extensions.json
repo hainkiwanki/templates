@@ -1,4 +1,4 @@
 {
-    "recommendations": ["esbenp.prettier-vscode", "stylelint.vscode-stylelint", "dbaeumer.vscode-eslint", "Vue.volar", "bradlc.vscode-tailwindcss"],
+    "recommendations": ["esbenp.prettier-vscode", "stylelint.vscode-stylelint", "dbaeumer.vscode-eslint"],
     "unwantedRecommendations": ["octref.vetur"]
 }
