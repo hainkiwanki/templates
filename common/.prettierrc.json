@@ -3,5 +3,14 @@
     "tabWidth": 4,
     "singleQuote": true,
     "trailingComma": "es5",
-    "endOfLine": "lf"
+    "endOfLine": "lf",
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "^[./].*(?<!\\.type\\.mjs)$",
+    "^[./].*\\.type\\.mjs$"
+    ],
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true,
+    "importOrderCaseInsensitive": true
 }
