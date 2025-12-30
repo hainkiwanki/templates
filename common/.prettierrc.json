@@ -4,13 +4,8 @@
     "singleQuote": true,
     "trailingComma": "es5",
     "endOfLine": "lf",
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
-    "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "^[./].*(?<!\\.type\\.mjs)$",
-    "^[./].*\\.type\\.mjs$"
-    ],
-    "importOrderSeparation": false,
-    "importOrderSortSpecifiers": true,
-    "importOrderCaseInsensitive": true
+    "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+    "importOrder": ["^\\./", "^\\.\\./", "<TYPES>"],
+    "importOrderParserPlugins": ["typescript", "jsx"],
+    "importOrderTypeScriptVersion": "5.0.0"
 }
