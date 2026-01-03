@@ -1,4 +1,5 @@
 import { JsonExpectedError } from '../errors/jsonExpected.error.mjs';
+import 'dotenv/config';
 
 export abstract class ApiClient {
     constructor(

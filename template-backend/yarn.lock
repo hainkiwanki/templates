@@ -598,7 +598,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sinclair/typebox@npm:^0.34.45":
+"@sinclair/typebox@npm:^0.34.46":
   version: 0.34.46
   resolution: "@sinclair/typebox@npm:0.34.46"
   checksum: 10c0/1bd0f9822b74bf81d500c4ab9bc736b2131ec07b2c3c5dd849438d4de7b21a226e25c07b3710f5cd45118db23fa263e856a2ab638be2cbbd60da2f298eb7c3a5
@@ -612,14 +612,16 @@ __metadata:
     "@fastify/cors": "npm:^11.2.0"
     "@fastify/type-provider-typebox": "npm:^6.1.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.7.0"
-    "@sinclair/typebox": "npm:^0.34.45"
+    "@sinclair/typebox": "npm:^0.34.46"
     "@types/node": "npm:^24.8.0"
+    dotenv: "npm:^17.2.3"
     eslint: "npm:^9.37.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.4"
     fastify: "npm:^5.6.1"
     prettier: "npm:^3.6.2"
     tsx: "npm:^4.20.6"
+    typebox: "npm:^1.0.71"
     typescript: "npm:^5.9.3"
   languageName: unknown
   linkType: soft
@@ -912,6 +914,13 @@ __metadata:
   version: 2.0.3
   resolution: "dequal@npm:2.0.3"
   checksum: 10c0/f98860cdf58b64991ae10205137c0e97d384c3a4edc7f807603887b7c4b850af1224a33d88012009f150861cbee4fa2d322c4cc04b9313bee312e47f6ecaa888
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^17.2.3":
+  version: 17.2.3
+  resolution: "dotenv@npm:17.2.3"
+  checksum: 10c0/c884403209f713214a1b64d4d1defa4934c2aa5b0002f5a670ae298a51e3c3ad3ba79dfee2f8df49f01ae74290fcd9acdb1ab1d09c7bfb42b539036108bb2ba0
   languageName: node
   linkType: hard
 
@@ -2390,6 +2399,13 @@ __metadata:
   dependencies:
     prelude-ls: "npm:^1.2.1"
   checksum: 10c0/7b3fd0ed43891e2080bf0c5c504b418fbb3e5c7b9708d3d015037ba2e6323a28152ec163bcb65212741fa5d2022e3075ac3c76440dbd344c9035f818e8ecee58
+  languageName: node
+  linkType: hard
+
+"typebox@npm:^1.0.71":
+  version: 1.0.71
+  resolution: "typebox@npm:1.0.71"
+  checksum: 10c0/96ac9dc784c318e55c11b4af551ca69e18ea14350c05bada72308ef5fa36566d5ef9324c54d2d6a57e0d6e6fd1cce582a5f5ca9ea990cd9c8d7b152fba4f3811
   languageName: node
   linkType: hard
 
