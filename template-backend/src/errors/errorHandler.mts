@@ -1,7 +1,8 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
 
 export class ErrorHandler {
-    public static handle(error: any, request: FastifyRequest, reply: FastifyReply) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    public static handle(error: any, request: FastifyRequest, reply: FastifyReply): FastifyReply {
         const statusCode = error.statusCode || 500;
         const isClientError = statusCode >= 400 && statusCode < 500;
         const message = error.message || 'Internal Server Error';

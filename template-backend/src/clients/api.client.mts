@@ -39,6 +39,7 @@ export abstract class ApiClient {
         return this.request<T>(path, { method: 'GET' });
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     public post<T>(path: string, payload: any): Promise<T> {
         return this.request<T>(path, {
             method: 'POST',
