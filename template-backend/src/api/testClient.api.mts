@@ -3,28 +3,46 @@ import { ExtendedError } from '../errors/extended.error.mjs';
 import { JsonExpectedError } from '../errors/jsonExpected.error.mjs';
 
 export class TestClientApi extends ApiClient {
-    public async get<T>(path: string): Promise<T> {
-        const response = await fetch(`${this.baseUrl}${path}`, {
-            headers: { 'X-Api-Key': this.apiKey },
+    private async request<T>(path: string, options: RequestInit): Promise<T> {
+        const url = `${this.baseUrl}${path}`;
+        const response = await fetch(url, {
+            ...options,
+            headers: {
+                'X-Api-Key': this.apiKey,
+                ...options.headers,
+            },
         });
+
         if (!response.ok) {
-            throw new ExtendedError(`${response}`);
+            // throw new JellySeerrResponseError(response);
+            throw new Error('temp');
+        }
+
+        if (response.status === 204 || response.headers.get('content-length') === '0') {
+            return { success: true } as T;
         }
 
         const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
+        if (!contentType?.includes('application/json')) {
             throw new JsonExpectedError(contentType);
         }
-
         return (await response.json()) as T;
     }
 
-    public post<T>(path: string): Promise<T> {
-        throw new Error('Method not implemented.');
+    public get<T>(path: string): Promise<T> {
+        return this.request<T>(path, { method: 'GET' });
+    }
+
+    public post<T>(path: string, payload: any): Promise<T> {
+        return this.request<T>(path, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        });
     }
 
     public delete<T>(path: string): Promise<T> {
-        throw new Error('Method not implemented.');
+        return this.request(path, { method: 'DELETE' });
     }
 }
 

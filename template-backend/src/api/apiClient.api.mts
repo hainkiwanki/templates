@@ -5,6 +5,6 @@ export abstract class ApiClient {
     ) {}
 
     public abstract get<T>(path: string): Promise<T>;
-    public abstract post<T>(path: string): Promise<T>;
+    public abstract post<T>(path: string, payload: any): Promise<T>;
     public abstract delete<T>(path: string): Promise<T>;
 }
