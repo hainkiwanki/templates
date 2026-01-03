@@ -1,11 +1,11 @@
 <template>
     <v-app-bar flat elevation="1">
-        <template v-slot:prepend>
-            <v-app-bar-nav-icon v-if="$vuetify.display.smAndDown" @click="emit('toggle-drawer')"></v-app-bar-nav-icon>
+        <template #prepend>
+            <v-app-bar-nav-icon v-if="$vuetify.display.smAndDown" @click="onToggleDrawerClick"></v-app-bar-nav-icon>
         </template>
         <v-app-bar-title>{{ appTitle }}</v-app-bar-title>
-        <template v-slot:append>
-            <v-btn @click="toggleTheme" icon="mdi-lightbulb" :color="isDarkTheme() ? 'warning' : 'accent'"> </v-btn>
+        <template #append>
+            <v-btn icon="mdi-lightbulb" :color="isDarkTheme() ? 'warning' : 'accent'" @click="toggleTheme" />
         </template>
     </v-app-bar>
 </template>
@@ -13,8 +13,10 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { useTheme } from 'vuetify';
+import { useClientSettingsStore } from '../store/settingsClient.store.mts';
 
 const theme = useTheme();
+const clientSettings = useClientSettingsStore();
 
 defineProps<{
     appTitle: string;
@@ -22,7 +24,7 @@ defineProps<{
 }>();
 
 const emit = defineEmits<{
-    (e: 'toggle-drawer'): void;
+    (e: 'onDrawerToggleClicked'): void;
 }>();
 
 onMounted(() => {
@@ -38,7 +40,11 @@ function isDarkTheme(): boolean {
 
 function toggleTheme(): void {
     const newTheme = theme.global.current.value.dark ? 'light' : 'dark';
-    theme.global.name.value = newTheme;
-    localStorage.setItem('theme', newTheme);
+    clientSettings.save(newTheme);
+    theme.change(newTheme);
+}
+
+function onToggleDrawerClick(): void {
+    emit('onDrawerToggleClicked');
 }
 </script>

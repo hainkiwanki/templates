@@ -4,7 +4,11 @@
             <app-bar :app-title="'Project'" :icon="'mdi-scissors-cutting'" @toggle-drawer="drawer = !drawer"></app-bar>
             <v-navigation-drawer v-model="drawer" expand-on-hover :rail mobile-breakpoint="md">
                 <v-list>
-                    <v-list-item :prepend-icon="rail ? 'mdi-toggle-switch-off-outline' : 'mdi-toggle-switch'" @click="onToggleClick" :title="'Toggle Hover'"></v-list-item>
+                    <v-list-item
+                        :prepend-icon="rail ? 'mdi-toggle-switch-off-outline' : 'mdi-toggle-switch'"
+                        :title="'Toggle Hover'"
+                        @click="onToggleClick"
+                    ></v-list-item>
                     <v-divider></v-divider>
                     <v-list-item :prepend-icon="'mdi-sprout'" :color="'#2196f3'" :title="1"></v-list-item>
                     <v-list-item :prepend-icon="'mdi-lightbulb-variant'" :color="'orange'" :title="2"></v-list-item>
@@ -18,6 +22,7 @@
                 </v-container>
             </v-main>
         </v-layout>
+        <error-snack-bar />
     </v-app>
 </template>
 

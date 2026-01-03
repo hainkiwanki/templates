@@ -1,11 +1,10 @@
 import js from '@eslint/js';
-import ts from 'typescript-eslint';
-import vuePlugin from 'eslint-plugin-vue';
-import vueParser from 'vue-eslint-parser';
-import tsParser from '@typescript-eslint/parser';
-import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+import vuePlugin from 'eslint-plugin-vue';
 import globals from 'globals';
+import ts from 'typescript-eslint';
+import vueParser from 'vue-eslint-parser';
 
 export default ts.config(
     js.configs.recommended,
@@ -25,7 +24,7 @@ export default ts.config(
             },
             parser: vueParser,
             parserOptions: {
-                parser: tsParser,
+                parser: ts.parser,
                 extraFileExtensions: ['.vue'],
                 sourceType: 'module',
             },
@@ -42,10 +41,7 @@ export default ts.config(
             'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 
             '@typescript-eslint/no-unused-vars': ['warn'],
-            '@typescript-eslint/explicit-function-return-type': [
-                'error', 
-                { allowExpressions: true }
-            ],
+            '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
 
             'vue/multi-word-component-names': 'off',
             'vue/no-mutating-props': 'warn',
