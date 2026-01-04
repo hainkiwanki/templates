@@ -11,6 +11,8 @@ RUN yarn build
 # ---------- Runtime stage ----------
 FROM node:20-alpine
 WORKDIR /app
+ARG VERSION
+ENV APP_VERSION=$VERSION
 ENV NODE_ENV=production
 COPY package.json ./
 COPY --from=build /app/dist ./dist
