@@ -1,0 +1,41 @@
+name: Build & Lint
+
+on:
+    pull_request:
+        branches: [main]
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+jobs:
+    prepare:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+            - name: Enable Corepack
+              run: corepack enable
+
+            - name: Install dependencies
+              run: yarn install --immutable
+
+            - name: Lint (fail on warnings)
+              run: yarn lint
+
+            - name: Docker iamge build
+              run: docker build -t my-private-api:test .
+
+            - name: Check package version bump
+              if: github.event_name == 'pull_request'
+              run: |
+                  git fetch origin main
+                  OLD_VERSION=$(git show origin/main:package.json | node -p "JSON.parse(require('fs').readFileSync(0)).version")
+                  NEW_VERSION=$(node -p "require('./package.json').version")
+
+                  if [ "$OLD_VERSION" = "$NEW_VERSION" ]; then
+                  echo "❌ package.json version was not updated"
+                  exit 1
+                  fi
